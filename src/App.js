@@ -11,7 +11,7 @@ import './App.css';
     setIsLoading(true)
     setIsError(null)
     try{
-    const response = await fetch('https://swapi.dev/api/films/admin');
+    const response = await fetch('https://swapi.dev/api/films');
     if(!response.ok){
       throw new Error('something went wrong!')
     }
@@ -20,7 +20,7 @@ import './App.css';
         return{
           id: moviesData.episode_id,
           title: moviesData.title,
-          releaseDate: moviesData.releaseDate,
+          releaseDate: moviesData.release_date,
           openingText: moviesData.opening_crawl
         }
       })
